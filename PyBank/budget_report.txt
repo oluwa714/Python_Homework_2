@@ -1,0 +1,5 @@
+     Budget Report 
+ ____________________
+Greatest profit increase was: $ 1926159 . Greatest profit decrease was: $ -2196167
+The net profit over this  86  month time frame was: $ 38382578 .
+The average change in profit was: $ 7803.48 .
