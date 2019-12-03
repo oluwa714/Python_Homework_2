@@ -2,18 +2,20 @@
 
 import csv
 
+months_of_data = 0
+net_total = 0
+last_profit = 0
+profit_changes = 0
+gpi = 0
+gpd = 0
+greatest_profit_month = ""
+greatest_profit_decrease = 0
+greatest_loss_month = ""
+
 with open("budget_data.csv") as budget:
     csv_reader = csv.reader(budget)
     header = next(csv_reader)
-    months_of_data = 0
-    net_total = 0
-    last_profit = 0
-    profit_changes = 0
-    gpi = 0
-    gpd = 0
-    greatest_profit_month = ""
-    greatest_profit_decrease = 0
-    greatest_loss_month = ""
+
     
 
     for row in csv_reader:
@@ -41,8 +43,8 @@ print("The greatest profit increase was: $ {0} in {1}. The greatest profit decre
 print("The average change in profit was: ${0}.".format(avg_profit_change))
 
 print("     Budget Report \n ____________________", file = budget_report)
-print("The net profit over this ", months_of_data, " month time frame was: $", net_total, ".", file = budget_report)
-print("Greatest profit increase was: $",  gpi, ". Greatest profit decrease was: $",  gpd, file = budget_report)
-print("The average change in profit was: $", avg_profit_change, ".", file = budget_report)
+print("The net profit over this {0} month time frame was: ${1}.".format(months_of_data, net_total), file = budget_report)
+print("The greatest profit increase was: $ {0} in {1}. The greatest profit decrease was: $ {2} in {3}.".format(gpi, greatest_profit_month, gpd, greatest_loss_month), file = budget_report)
+print("The average change in profit was: ${0}.".format(avg_profit_change), file = budget_report)
 
 budget_report.close()
